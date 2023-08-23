@@ -197,7 +197,7 @@ Git est aussi connu pour son nommage des commandes qui n'est pas évident (typiq
 
 ---
 
-## GitHub, GitLab : les "forges" Git
+## GitHub, GitLab, Forgejo : les "forges" Git
 
 .center[
 ![](img/logogithubgitlab.png)
@@ -225,7 +225,7 @@ Par exemple, les extensions qui intègrent Git dans VS Code (ou votre IDE favori
 
 - **git** : Comprendre les notions et connaître les commandes fondamentales
 - **VScode**/**Eclipse** : Savoir interagir avec Git au travers des intégrations disponibles
-- **GitLab** : Savoir publier / récupérer du code, et créer des merge requests
+- **GitLab**/**Forgejo** : Savoir publier / récupérer du code, réer des merge requests, gérer des revues de code
 - Bonnes pratiques, méthodes de travail
 
 

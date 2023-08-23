@@ -96,15 +96,15 @@ This is a simple microblogging app
 
 ## 4. Les remotes, les merges, les merge-request
 
-- 4.1 : Créez-vous un compte sur https://gitlab.com (pas la peine d'utilisez votre vrai nom ni une vraie adresse-mail)
+- 4.1 : Nous proposons de travailler avec CodeBerg, une forge ouverte fonctionnant grâce au logiciel Forgejo. Créez-vous un compte sur https://codeberg.org/ (pas la peine d'utilisez votre vrai nom ni une vraie adresse-mail, vous pouvez pas exemple utiliser une addresse jetable sur yopmail.com).
 - 4.2 : Rendez-vous sur le dépôt original de microblog, puis forkez le projet à l'aide du bouton en haut à droite de la page
 - 4.3 : Ajoutez ce nouveau remote dans votre clone local à l'aide de `git remote add`
 - 4.4 : Poussez votre branche `about-page` sur votre fork
 - 4.5 : Confirmez que vous trouvez bien cette nouvelle branche sur votre fork depuis votre navigateur, puis allez dans la partie "Merge request". Créez une nouvelle "merge request" en prenant bien soin de sélectionner la branche du formateur (sur le dépôt original !) comme cible.
 - 4.6 : Vérifiez que la merge request a bien été crée sur le dépôt du formateur et est en attente de relecture/validation
-- 4.7 : Pendant ce temps, le formateur continue de travailler sur sa branche `main` et va bientôt commiter un changement qui va créer un conflit entre `main` et votre branche (attendre le signal du formateur ;)). Une fois que c'est fait, vous devriez voir sur la page de la merge request qu'une vérification de mergeabilité effectuée par GitLab est passée au rouge.
-- 4.8 : Utilisez `git pull` (ou bien `git fetch` et `git merge` séparément) pour fusionner la branche du formateur dans la votre, et résolvez le conflit. Poussez ensuite le nouveau commit sur votre branche et validez que la vérification de Gitlab est repassée au vert.
-- 4.9 : Le formateur devrait également avoir laissé une petite revue de code contenant une suggestion de changement. Utilisez l'interface de GitLab pour transformer cette suggestion en commit, et synchronisez de nouveau votre branche locale. Vérifiez que la suggestion du formateur est bien présente dans la sortie de `git log` ou dans Git Graph de VSCode.
+- 4.7 : Pendant ce temps, le formateur continue de travailler sur sa branche `main` et va bientôt commiter un changement qui va créer un conflit entre `main` et votre branche (attendre le signal du formateur ;)). Une fois que c'est fait, vous devriez voir sur la page de la merge request qu'une vérification de mergeabilité effectuée est passée au rouge (en tout cas c'est le cas sur GitLab ... à voir sur CodeBerg/Forgejo!)
+- 4.8 : Utilisez `git pull` (ou bien `git fetch` et `git merge` séparément) pour fusionner la branche du formateur dans la votre, et résolvez le conflit. Poussez ensuite le nouveau commit sur votre branche et validez que la vérification de mergeabilité est repassée au vert.
+- 4.9 : Le formateur devrait également avoir laissé une petite revue de code contenant une suggestion de changement. Transformer cette suggestion en commit, et poussez-là sur votre dépôt distant. Vérifiez que la suggestion du formateur est bien présente dans la sortie de `git log` ou dans Git Graph de VSCode.
 - 4.10 : Une fois que le formateur a mergé votre merge-request (ou celle d'un.e camarade !), re-synchronisez votre dépôt local ainsi que votre fork.
 
 ## 5. Bonnes pratiques, situations de la vie quotidienne
