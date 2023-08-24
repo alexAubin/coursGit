@@ -1378,16 +1378,16 @@ Exercices
 
 class: impact
 
-# 6. Intégration continue avec GitLab
+# 6. Intégration continue avec GitLab/Github/Forgejo
 
 ## Et autres outils d'une forge moderne
 
 
 ---
 
-# 6. Gitlab CI
+# 6. Intégration continue
 
-## L'intégration continue (CI)
+## L'intégration continue (CI) : principe
 
 - Accélérer la livraison des nouvelles versions du logiciel.
 - Des tests *systématiques* et *automatisés* pour ne pas se reposer sur la vérification humaine.
@@ -1402,9 +1402,9 @@ class: impact
 
 ---
 
-# 6. Gitlab CI
+# 6. Intégration continue
 
-## L'intégration continue (CI)
+## L'intégration continue (CI) : principe
 
 La CI/CD fait partie de l’approche DevOps dont fait aussi partie les concepts de :
 - cloud (Infrastructure-as-a-Service, IaaS)
@@ -1413,7 +1413,7 @@ La CI/CD fait partie de l’approche DevOps dont fait aussi partie les concepts 
 
 ---
 
-# 6. Gitlab CI
+# 6. Intégration continue
 
 ## Les pipelines de test
 
@@ -1425,7 +1425,7 @@ Découpées en "stages" puis en "jobs"
 
 ---
 
-# 6. Gitlab CI
+# 6. Intégration continue
 
 ## Les pipelines de test
 
@@ -1518,10 +1518,9 @@ build:
     - docker push $IMAGE_BRANCH_TAG
 ```
 
-
 ---
 
-# 6. Gitlab CI
+# 6. Intégration continue
 
 ## Pour aller plus loin
 
@@ -1532,4 +1531,69 @@ GitLab permet aussi de configurer des Webhooks
 - c'est-à-dire appeler une URL web e.g `https://votre.domain.tld/my_hook/` lorsque certain type d'événements se produisent (par exemple un nouveau commit sur une PR, un merge, un tag, ...)
 
 ... et pleins d'autres choses
+
+---
+
+# 6. Intégration continue
+
+## Configuration de la CI dans Github/Forgejo
+
+- pareil mais en différent ...
+- nommées plutôt "Actions" ou "Workflows"
+- un workflow contiens des jobs ... découpés en steps
+
+---
+
+# 6. Intégration continue
+
+## Configuration de la CI dans Github/Forgejo
+
+`.forgejo/workflows/test.yml`
+
+```yml
+name: Workflow Dire coucou
+on: 
+  pull_request:
+  push:
+
+jobs:
+  coucou:
+    runs-on: docker
+    steps:
+      - name: Dire coucou
+        id: coucou
+        run: |
+          echo "coucou c'est moi!"
+```
+
+---
+
+## Configuration de la CI dans Github/Forgejo
+
+`.forgejo/workflows/test.yml`
+
+```yml
+name: Test
+on:
+  pull_request:
+  push:
+
+jobs:
+  release:
+    runs-on: docker
+    steps:
+      - name: Install dependencies
+        id: dependencies
+        run: |
+          apt update
+          apt install python3-pip nodejs git -y
+          pip3 install mypy
+      - uses: https://code.forgejo.org/actions/checkout@v3
+      - name: Test avec MyPy
+        id: mypy
+        run: |
+          mypy *.py --non-interactive
+```
+
+
 

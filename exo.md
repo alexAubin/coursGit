@@ -133,22 +133,14 @@ This is a simple microblogging app
 
 ## 6. Configurer Gitlab CI
 
-- 6.1 : Depuis `main`, créez une nouvelle branche `ajout-test-ci`. Dans cette branche, rajoutez via un *cherry-pick* le commit que vous aurez trouver dans sa branche (sur `origin`) qui rajoute un le fichier `.gitlab-ci.yml` contenant une sorte de Hello-World.
-- 6.2 : Rajoutez un nouveau job qui va installer l'outil `flake8` et le lancer sur le fichier `app/main/routes.py` : 
-
-```bash
-apt update
-apt install python3-pip -y
-pip3 install flake8
-flake8 app/main/routes.py
-```
-
-- 6.3 : Commitez vos changements, poussez votre branche sur votre fork, et créez une nouvelle pull-request. Constatez également que, normalement, la pipeline s'est déclenchée pour faire tourner le test.
+- 6.1 : Depuis `main`, créez une nouvelle branche `ajout-test-ci`. Dans cette branche, rajoutez via un *cherry-pick* le commit que vous aurez trouvé dans la branche (sur `origin`) qui rajoute un fichier `.forgejo/workflows/test.yml` contenant une sorte de Hello-World.
+- 6.2 : En s'inspirant du cours (exemple avec mypy), adapter le fichier `.forgejo/workflows/test.yml` pour qu'il installe les dépendances et lance non pas l'outil `mypy` mais `flake8`, uniquement sur le fichier `app/main/routes.py` (on devrait donc voir : `pip3 install flake8` et `flake8 app/main/routes.py`)
+- 6.3 : Commitez vos changements, poussez votre branche sur votre fork, et créez une nouvelle pull-request. Constatez également que, normalement, la pipeline s'est déclenchée pour faire tourner le test (ou bien peut-être que le formateur doit vous ajouteur comme collaborateur au dépôt pour que vos commmits puissent déclencher les tests..).
 - 6.4 : Corrigez le fichier `app/main/routes.py` pour que `flake8` soit content
 - 6.5 : Finalement, testons le fonctionnement de `git rebase`
     - Re-créez une toute nouvelle branche `superbranche` qui commencera depuis le tag `v0.21`
-    - Utilisez des `git cherry-pick` pour ajouter votre (ou vos) commits qui rajoutait la page "About"
-    - De même pour les commits qui rajoutaient la CI dans Gitlab
+    - Utilisez des `git cherry-pick` pour ajouter votre (ou vos) commits qui rajoutaient la page "About"
+    - De même pour les commits qui rajoutaient les tests d'intégration continue
     - Regardez la structure actuelle des différentes branche dans VScode (ou avec `git log --oneline --graph`)
     - `rebase`-ons votre branche de sorte à ce qu'elle démarre depuis le sommet de la branche `main`, en utilisant `git rebase main`
     - Comparez la nouvelle structure de branche
