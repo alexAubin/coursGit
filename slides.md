@@ -512,6 +512,12 @@ Plus rarement on peut aussi :
 
 ---
 
+.center[
+![](img/fileflow3.png)
+]
+
+---
+
 ## 1. Dépôt, commit, état des fichiers
 
 Les commits sont identifiés par la somme de controle SHA-1 de leur diff et méta-données (qui inclue le hash du parent)
@@ -1596,4 +1602,65 @@ jobs:
 ```
 
 
+---
+
+class: impact
+
+
+# 7. Epilogue
+
+---
+
+# 7. Epilogue
+
+https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
+
+---
+
+# 7. Epilogue
+
+## D'autres trucs et astuces pour la vie quotidienne (1/2)
+
+- Pousser une branche locale avec un autre nom distant
+    - `git push origin feature-corrigee:feature` (souvent avec `--force`)
+
+- Cloner seulement des branches ou derniers commits d'un dépôt
+    - `git clone <url> --branch <nom_de_branche>`
+    - `git clone <url> --depth 5`
+    - `git clone <url> --bare`
+
+---
+
+# 7. Epilogue
+
+## D'autres trucs et astuces pour la vie quotidienne (1/2)
+
+
+- Chercher une expression dans tous les commits
+    - `git grep 'une expression' $(git rev-list --all)`
+    - `git log -g --grep='une expression'` (cherche dans le reflog)
+
+- Optimiser l'espace pris par le dépôt
+    - `git prune`
+    - `git gc` (apriori jamais besoin de l'appeler manuellement)
+
+---
+
+# 7. Epilogue
+
+## D'autres exercices intéressants
+
+https://gitexercises.fracz.com/
+
+- "How to start"
+- `chase-branch`
+- `merge-conflict`
+- `save-your-work`
+- `remove-ignored`
+- `fix-typo`
+- `forge-date`
+- `fix-old-typo`
+- `commit-lost`
+- `invalid-order`
+- `find-swearwords`
 
