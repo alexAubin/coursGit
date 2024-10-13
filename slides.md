@@ -192,8 +192,63 @@ Git est aussi connu pour son nommage des commandes qui n'est pas évident (typiq
 ---
 
 .center[
+<br/>
+<br/>
 ![](img/gitiseasier.png)
 ]
+
+---
+
+.center[
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+## On peut voir `git` comme <br/>une *boîte à outils*<br/>pour manipuler *un graphe de commits*
+]
+
+
+---
+
+.center[
+### ~150 commandes au total (`git help -a`)<br/>La majorité sont "de la plomberie" = bas niveau
+
+![](img/gitcommands1.png)
+]
+
+---
+
+.center[
+### Il y a environ 50 commandes "porcelain" = haut niveau <br/>On va en étudier une trentaine
+
+![](img/gitcommands2.png)
+]
+
+---
+
+.center[
+### Il y a environ 50 commandes "porcelain" = haut niveau <br/>On va en étudier une trentaine
+
+![](img/gitcommands3.png)
+]
+
+
+---
+
+
+.center[
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+## Néanmoins `git` reste une boîte à outil et ne définit pas de workflow de travail...<br/>
+## C'est à *vous* de le définir (avec votre équipe) et de savoir le mettre en oeuvre avec les commands `git`
+]
+
 
 ---
 
@@ -225,7 +280,7 @@ Par exemple, les extensions qui intègrent Git dans VS Code (ou votre IDE favori
 
 - **git** : Comprendre les notions et connaître les commandes fondamentales
 - **VScode**/**Eclipse** : Savoir interagir avec Git au travers des intégrations disponibles
-- **GitLab**/**Forgejo** : Savoir publier / récupérer du code, réer des merge requests, gérer des revues de code
+- **GitLab**/**Forgejo** : Savoir publier / récupérer du code, créer des merge requests, gérer des revues de code
 - Bonnes pratiques, méthodes de travail
 
 
@@ -591,7 +646,7 @@ class: impact
 
 ---
 
-## Parentèse technique : sous le capot
+## Parentèse technique : sous le capôt
 
 Git a été conçu un peu comme un système de fichier. Dans `.git` on trouve:
 - des **blob** : le contenu des fichiers
@@ -604,6 +659,54 @@ Les objets sont identifiés par des sommes de contrôle SHA-1.
 Le stockage des objets est optimisé en calculant parfois le différentiel entre deux objets <small>(c'est pourquoi des fois on voit git parler de "Resolving deltas (...)")</small>
 
 Plus d'infos : https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal1.png)
+]
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal2.png)
+]
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal3.png)
+]
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal4.png)
+]
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal5.png)
+]
+
+---
+
+## Parentèse technique : sous le capôt
+
+.center[
+![](img/gitcommitinternal6.png)
+]
 
 ---
 

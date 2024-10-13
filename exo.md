@@ -3,9 +3,9 @@
 
 ## 0. Setup
 
-- 0.1 : Vérifiez que vous avez accès à la machine de travail fournie par le formateur avec le login `stagiareX` (`X` entre 1 et 10) et comme mot de passe `ilovegit`
+- 0.1 : Vérifiez que vous avez accès à la machine de travail fournie par le formateur avec le login `votreprenom` (tout en minuscule, sans accent) et comme mot de passe `ilovegit`
 - 0.2 : Une fois connecté, ouvrez un terminal et vérifiez que `git` est installé à l'aide de `git --version`
-- 0.3 : Vérifiez que votre IDE préféré est installé
+- 0.3 : Vérifiez que votre IDE préféré (VSCode ?) est installé
 
 
 ## 1. Les bases : Dépôt, commit, état des fichiers
@@ -17,7 +17,8 @@
 
 ```bash
 git config --global user.name "<votre nom>"
-git config --global user.email "<votre email>"
+git config --global user.email "<votre email>"  
+                # NB: dans l'absolu, pas besoin de mettre un vrai mail ici
 ```
 
 Au passage, on peut dire à Git d'utilisez des couleurs dans `git status` et ailleurs : 
