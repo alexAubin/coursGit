@@ -96,6 +96,12 @@ Formateur
 
 ---
 
+.center[
+![](img/youintwodays.jpg)
+]
+
+---
+
 ## Méthode de travail
 
 - Je met à disposition au fur à mesure le support
@@ -797,6 +803,10 @@ Outil plus avancé : `git bisect`
 class: impact
 
 # 3. Branches, merges, conflits, tags
+
+.center[
+![](img/whatisbranch.png)
+]
 
 ---
 

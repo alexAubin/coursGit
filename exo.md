@@ -78,7 +78,7 @@ def about():
 
 {% extends "base.html" %}
 
-{% block app_content %}
+{% block content %}
 <h1>About</h1>
 
 This is a simple microblogging app
