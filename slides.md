@@ -96,6 +96,12 @@ Formateur
 
 ---
 
+.center[
+![](img/youintwodays.jpg)
+]
+
+---
+
 ## Méthode de travail
 
 - Je met à disposition au fur à mesure le support
@@ -798,6 +804,10 @@ class: impact
 
 # 3. Branches, merges, conflits, tags
 
+.center[
+![](img/whatisbranch.png)
+]
+
 ---
 
 ## 3. Branches, merges, conflits, tags
@@ -1242,7 +1252,7 @@ class: impact
 - Idéalement avoir testé son code ...
 - Faire `git status` ! Vérifiez qu'on a pas des fichiers à enlever
 - Relire **attentivement** le diff <small>(généralement on oublie d'enlever un `print(..)` de debug)</small>
-- On peut utiliser `git add -e` pour une relecture du diff / ajouter les blocs de modifications un par un
+- On peut utiliser `git add -p` et `git add -e` pour une relecture du diff / ajouter les blocs de modifications un par un
 
 
 ---
