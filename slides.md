@@ -112,9 +112,9 @@ Formateur
 
 class: impact
 
-## Introduction
+# Introduction
 
-### Les gestionnaires de version
+## Les gestionnaires de version
 
 
 ---
@@ -243,18 +243,16 @@ Git est aussi connu pour son nommage des commandes qui n'est pas évident (typiq
 
 ---
 
-
 .center[
 <br/>
 <br/>
 <br/>
 <br/>
+## Néanmoins `git` reste une boîte à outil
+## et *ne définit pas de workflow de travail...*<br/>
 <br/>
-<br/>
-## Néanmoins `git` reste une boîte à outil et ne définit pas de workflow de travail...<br/>
 ## C'est à *vous* de le définir (avec votre équipe) et de savoir le mettre en oeuvre avec les commands `git`
 ]
-
 
 ---
 
@@ -1325,7 +1323,68 @@ Généralement les commits de merge, c'est good-enough.
 
 ---
 
-## 5. Tips pour la vie quotidienne (1/6)
+## 5. Tips pour la vie quotidienne (1/7)
+
+### Options globales pratiques (1/2)
+
+.center[
+**Voir : <https://blog.gitbutler.com/how-git-core-devs-configure-git/>**
+]
+
+**Auto-corriger les typos dans les commandes**
+
+```bash
+git config --global help.autocorrect prompt
+```
+
+**Meilleurs diff + couleur bleu pour les morceaux 'déplacés'**
+
+```bash
+git config --global diff.algorithm histogram
+git config --global diff.colorMoved plain
+```
+
+**Montrer les 3 versions dans les conflits**
+
+```bash
+git config --global merge.conflictstyle zdiff3
+```
+
+
+---
+
+## 5. Tips pour la vie quotidienne (1/7)
+
+### Options globales pratiques (2/2)
+
+.center[
+**Voir : <https://blog.gitbutler.com/how-git-core-devs-configure-git/>**
+]
+
+**Auto-configurer le tracking des branches lors des `push`**
+
+```bash
+git config --global push.autoSetupRemote true
+```
+
+**`--rebase` et stash par défaut lors des `pull`s**
+
+```bash
+git config --global pull.rebase true
+git config --global rebase.autoStash true
+```
+
+**Récupérer toutes les branches + nettoyer automatiquement les vieilles branches / tags**
+
+```bash
+git config --global fetch.all true
+git config --global fetch.prune true
+git config --global fetch.pruneTags true
+```
+
+---
+
+## 5. Tips pour la vie quotidienne (2/7)
 
 ### Git dans son `$PS1`
 
@@ -1341,7 +1400,7 @@ PS1='[\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]]`__git_ps1`
 
 ---
 
-## 5. Tips pour la vie quotidienne (2/6)
+## 5. Tips pour la vie quotidienne (3/7)
 
 ### `git commit --amend`
 
@@ -1357,7 +1416,7 @@ Pas de panique :
 
 ---
 
-## 5. Tips pour la vie quotidienne (3/6)
+## 5. Tips pour la vie quotidienne (4/7)
 
 ### `git stash`
 
@@ -1372,7 +1431,7 @@ On peut aussi utiliser `git stash` pour "transporter" un petit bout de changemen
 
 ---
 
-## 5. Tips pour la vie quotidienne (4/6)
+## 5. Tips pour la vie quotidienne (5/7)
 
 ### Créer/appliquer des patchs avec `git diff` et `git apply`
 
@@ -1387,7 +1446,7 @@ Par exemple :
 
 ---
 
-## 5. Tips pour la vie quotidienne (5/6)
+## 5. Tips pour la vie quotidienne (6/7)
 
 **Situation** : j'ai commité sur `main` alors que je voulais commiter sur une nouvelle branche !
 
@@ -1399,7 +1458,7 @@ Pas de panique :
 
 ---
 
-## 5. Tips pour la vie quotidienne (6/6)
+## 5. Tips pour la vie quotidienne (7/7)
 
 **Situation** : j'ai fait un commit mais j'aimerai le séparer en deux commits distincts
 
