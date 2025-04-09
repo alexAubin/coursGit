@@ -1180,6 +1180,74 @@ Que ce serait-il passé si on avait mergé `feature-X` en local avant de faire `
 
 ## 4. Remote et pull/merge requests
 
+### A propos du "*remote branch tracking*" (1/4)
+
+Lorsqu'on `checkout` une branche qui existe déjà sur le dépôt distant, git créé une branche locale qui est configurée pour suivre (`track`) la branche distante correspondante.
+
+```text
+> git checkout toto
+branch 'toto' set up to track 'origin/toto'.
+Switched to a new branch 'toto'
+```
+
+... et plus tard ...
+
+```text
+> git status
+On branch toto
+Your branch is behind 'origin/toto' by 3 commits, and can be fast-forwarded.
+```
+
+---
+
+## 4. Remote et pull/merge requests
+
+### A propos du "*remote branch tracking*" (2/4)
+
+On peut voir le lien entre les branches locales et distantes avec : 
+
+```text
+> git branch -avv
+[...]
+toto          3c586159d [origin/toto] Message du dernier commit
+[...]
+```
+
+---
+
+## 4. Remote et pull/merge requests
+
+### A propos du "*remote branch tracking*" (3/4)
+
+Lorsqu'on créé localement une nouvelle branche puis qu'on `push`, **par défaut, git ne configure pas le lien entre la branche locale et la branche distante**. Plus tard lorsqu'on `git pull` (sans option), git veut qu'on lui dise explicitement quelle est la branche distante à considérer ... 
+
+```text
+> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> foobar
+```
+
+---
+
+## 4. Remote et pull/merge requests
+
+### A propos du "*remote branch tracking*" (4/4)
+
+Néanmoins on peut : 
+- utiliser `git push -u` (ou `--set-upstream`) pour créer le lien local<->remote au moment où l'on pousse la branche
+- faire `git config --global push.autoSetupRemote true` pour que tout ça soit automatique pour de bon !
+
+---
+
+## 4. Remote et pull/merge requests
+
 Dans la vraie vie, on merge assez peu souvent des branches en local : on créer une pull-request (PR) / merge-request (MR) sur le dépôt distant (ou plus précisémment sur la *forge*
 
 - En français : demande d'intégration, ou fusio-demande
